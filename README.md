@@ -9,7 +9,7 @@ Vehicle-to-infrastructure cooperative 3D object detection (VIC3D) is a task that
 Download data at [BaiduCloud](https://pan.baidu.com/s/1WrTgJ7wFccfszt15FJwsNA?pwd=f4in) or [OneDrive](https://zjueducn-my.sharepoint.com/:f:/g/personal/zhu_he_zju_edu_cn/Eh9Os8y64hhEqkkGICLTJ9sB16hkZY3-vd3xh1cRHBgzLw?e=eq27Tt) and organize as follows:
 ```
 data
-└── OTVIC
+└── otvic
     ├── annotation
     │   ├── train
     │   ├── val
@@ -17,10 +17,10 @@ data
     └── data
         ├── can_bus
         ├── image
-        │   ├── backward
-        │   ├── forward
-        │   ├── left
-        │   └── right
+        │   ├── Backward
+        │   ├── Forward
+        │   ├── Left
+        │   └── Right
         ├── pointcloud
         └── road
 ```
