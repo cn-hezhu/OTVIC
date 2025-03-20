@@ -26,6 +26,40 @@ data
         ├── pointcloud
         └── road
 ```
+## Install
+```
+conda create -n otvic python=3.8 -y
+conda activate otvic
+pip install torch==1.9.1+cu111 torchvision==0.10.1+cu111 torchaudio==0.9.1 -f https://download.pytorch.org/whl/torch_stable.html
+conda install -c omgarcia gcc-6 # gcc-6.2
+pip install mmcv-full==1.4.0
+pip install mmdet==2.14.0
+pip install mmsegmentation==0.14.1
+git clone https://github.com/open-mmlab/mmdetection3d.git
+cd mmdetection3d
+git checkout v0.17.1 # Other versions may not be compatible.
+python setup.py install
+```
+
+## Train and Test
+```
+# Please run cam_stream and lidar_stream first to get pretrain models.
+./tools/dist_train.sh ./configs/LfFormer/Lfformer_otvic.py 4
+./tools/dist_test.sh ./configs/LfFormer/Lfformer_otvic.py ./ckpt/Lfformer_best.pth 8
+```
+
+## Bibtex
+If this work is helpful for your research, please consider citing the following BibTeX entry.
+```
+@inproceedings{zhu2024otvic,
+  title={OTVIC: A Dataset with Online Transmission for Vehicle-to-Infrastructure Cooperative 3D Object Detection},
+  author={Zhu, He and Wang, Yunkai and Kong, Quyu and Wei, Yufei and Xia, Xunlong and Deng, Bing and Xiong, Rong and Wang, Yue},
+  booktitle={2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  pages={10732--10739},
+  year={2024},
+  organization={IEEE}
+}
+```
 
 ## Acknowledgement
 Many thanks to these excellent open source projects:
