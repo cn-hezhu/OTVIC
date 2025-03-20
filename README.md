@@ -42,10 +42,10 @@ python setup.py install
 ```
 
 ## Train and Test
-```
+```python
 # Please run cam_stream and lidar_stream first to get pretrain models.
 ./tools/dist_train.sh ./configs/LfFormer/Lfformer_otvic.py 4
-./tools/dist_test.sh ./configs/LfFormer/Lfformer_otvic.py ./ckpt/Lfformer_best.pth 8
+./tools/dist_test.sh ./configs/LfFormer/Lfformer_otvic.py ./ckpt/Lfformer_best.pth 4
 ```
 
 ## Bibtex
