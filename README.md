@@ -28,22 +28,24 @@ data
 ```
 ## Install
 ```
-conda create -n lfformer python=3.8 -y
+git clone https://github.com/cn-hezhu/OTVIC.git
+cd OTVIC
+conda create -n otvic python=3.8 -y
 conda activate otvic
 pip install torch==1.9.1+cu111 torchvision==0.10.1+cu111 torchaudio==0.9.1 -f https://download.pytorch.org/whl/torch_stable.html
 conda install -c omgarcia gcc-6 # gcc-6.2
 pip install mmcv-full==1.4.0 -f https://download.openmmlab.com/mmcv/dist/cu111/torch1.9.0/index.html
 pip install mmsegmentation==0.14.1
-git clone https://github.com/cn-hezhu/OTVIC.git
-cd ./OTVIC/third_party/mmdetection-2.14.0
+cd ./third_party/mmdetection-2.14.0
 pip install -v -e .
-cd ./OTVIC/
+cd ../../
 pip install -v -e .
-vim ~/.bashrc
-export PYTHONPATH="${PYTHONPATH}:/path/OTVIC/third_party/nuscenes-devkit-1.1.9/python-sdk"
 pip install timm
 pip install attributedict
 pip install setuptools==59.5.0
+
+vim ~/.bashrc
+export PYTHONPATH="${PYTHONPATH}:/path/OTVIC/third_party/nuscenes-devkit-1.1.9/python-sdk"
 ```
 
 ## Train and Test
